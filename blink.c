@@ -7,16 +7,16 @@
 int main() {
 
 	// Put B5 in output mode
-	DDRB |= _BV(PORTB5);
+	DDRB |= (1 << DDB5);
 
 	while (true) {
 
 		// Set B5 HIGH
-		PORTB |= _BV(PORTB5);
+		PORTB |= (1 << DDB5);
 		_delay_ms(DELAY);
 
 		// Set B5 LOW
-		PORTB &= ~_BV(PORTB5);
+		PORTB &= ~ (1 << DDB5);
 		_delay_ms(DELAY);
 	}
 
