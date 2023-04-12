@@ -3,6 +3,8 @@ CFLAGS=-Os -DF_CPU=16000000UL -mmcu=atmega328p
 USBPORT:=$(shell ls /dev/ttyAC*)
 NAME=blink
 
+.PHONY: all flash clean
+
 all: $(NAME).hex
 
 $(NAME).o: $(NAME).c
