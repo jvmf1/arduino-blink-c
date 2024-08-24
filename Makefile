@@ -14,7 +14,7 @@ $(NAME).out: $(NAME).o
 $(NAME).hex: $(NAME).out
 	avr-objcopy -O ihex -R .eeprom $< $@
 
-install: $(NAME).hex
+flash: $(NAME).hex
 	avrdude -F -V -c arduino -p ATMEGA328P -P $(USBPORT) -b 115200 -U flash:w:$<
 
 clean:
